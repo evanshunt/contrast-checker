@@ -8,7 +8,11 @@
     <style>
         main {
             display: flex;
-            flex-flow: row nowrap;
+            flex-flow: row wrap;
+        }
+
+        main section {
+            width: 100%;
         }
 
         fieldset .results {
@@ -19,6 +23,20 @@
             margin-left: 1rem;
             font-size: 1.5;
             font-weight: bold;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            text-align: right;
+            border: 1px solid grey;
+            padding: 0.25rem 0.5rem;
+        }
+         
+        th{
+            padding: 0.25rem 2rem;
         }
 
         @media all and (min-width: 700px) {
@@ -48,6 +66,39 @@
     </style>
 </head>
 <body>
+    <header>
+        <h1>Contrast Checker</h1>
+        <p>Input hex codes in the fields below. Copy and paste the URL to share and persist your input.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Contrast</th>
+                    <th>Background WCAG Rating</th>
+                    <th>Link vs Plaintext</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>&gt;=7</td>
+                <td>AAA <span style='color: #1ECBE1'>✓</span></td>
+                <td>Pass <span style='color: #6AE11E'>✓</span></td>
+            </tr>
+            <tr>
+                <td>&gt;=4.5</td>
+                <td>AA <span style='color: #6AE11E'>✓</span></td>
+                <td>Pass <span style='color: #6AE11E'>✓</span></td>
+            </tr>
+            <tr>
+                <td>&gt;=3</td>
+                <td>AA Large <span style='color: #E1831E'>✓</span></td>
+                <td>Pass <span style='color: #6AE11E'>✓</span></td>
+            </tr>
+            <tr>
+                <td>&lt;3</td>
+                <td>Fail <span style='color: #E1341E'>X</span></td>
+                <td>Fail <span style='color: #E1341E'>X</span></td>
+            </tr>
+        </table>
+    </header>
     <main>
         <section class="light-bg">
             <h2>Light Backgrounds</h2>
@@ -56,6 +107,7 @@
                 <div class="info">
                     <label for="light-bg-text-color">Text Color</label>
                     <input type="text" id="light-bg-text-color" name="light-bg-text-color" value="#000000">
+                    <br>
                     <label for="light-bg-link-color">Link Color</label>
                     <input type="text" id="light-bg-link-color" name="light-bg-link-color" value="#3333ff">
                 </div>
@@ -115,6 +167,7 @@
                 <div class="info">
                     <label for="dark-bg-text-color">Text Color</label>
                     <input type="text" id="dark-bg-text-color" name="dark-bg-text-color" value="#ffffff">
+                    <br>
                     <label for="dark-bg-link-color">Link Color</label>
                     <input type="text" id="dark-bg-link-color" name="dark-bg-link-color" value="#3333ff">
                 </div>
