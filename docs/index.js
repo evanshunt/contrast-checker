@@ -37,7 +37,10 @@ const $2776a60caf88deef$var$icon = {
     meh: "<span style='color: #E1831E'>✓</span>",
     fail: "<span style='color: #E1341E'>X</span>"
 };
-let $2776a60caf88deef$var$bgFields = [];
+let $2776a60caf88deef$var$bgFields = {
+    "light-bg": [],
+    "dark-bg": []
+};
 function $2776a60caf88deef$var$bgIconFromScore(score) {
     if (score >= 7) return $2776a60caf88deef$var$icon.AAA;
     else if (score >= 4.5) return $2776a60caf88deef$var$icon.pass;
@@ -111,21 +114,21 @@ document.querySelectorAll("section").forEach((section)=>{
     textInput.addEventListener("input", (event)=>{
         $2776a60caf88deef$var$updateUrl(event.target, $2776a60caf88deef$var$params);
         $2776a60caf88deef$var$checkLinks(event.target, linkInput);
-        $2776a60caf88deef$var$bgFields.forEach((field)=>{
+        $2776a60caf88deef$var$bgFields[sectionString].forEach((field)=>{
             $2776a60caf88deef$var$checkBgs(field, event.target.value, linkInput.value);
         });
     });
     linkInput.addEventListener("input", (event)=>{
         $2776a60caf88deef$var$updateUrl(event.target, $2776a60caf88deef$var$params);
         $2776a60caf88deef$var$checkLinks(textInput, event.target);
-        $2776a60caf88deef$var$bgFields.array.forEach((element)=>{
+        $2776a60caf88deef$var$bgFields[sectionString].forEach((element)=>{
             $2776a60caf88deef$var$checkBgs(element, textInput.value, event.target.value);
         });
     });
     const textColor = $2776a60caf88deef$var$hexFormat(textInput.value);
     const linkColor = $2776a60caf88deef$var$hexFormat(linkInput.value);
     section.querySelectorAll(`input[name^="${sectionString}-color"]`).forEach((field)=>{
-        $2776a60caf88deef$var$bgFields.push(field);
+        $2776a60caf88deef$var$bgFields[sectionString].push(field);
         $2776a60caf88deef$var$checkBgs(field, textColor, linkColor);
         field.addEventListener("input", (event)=>{
             $2776a60caf88deef$var$updateUrl(event.target, $2776a60caf88deef$var$params);

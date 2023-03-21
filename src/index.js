@@ -7,7 +7,10 @@ const icon = {
     fail: "<span style='color: #E1341E'>X</span>"
 };
 
-let bgFields = [];
+let bgFields = {
+    'light-bg': [],
+    'dark-bg': []
+};
 
 function bgIconFromScore(score) {
     if (score >= 7) {
@@ -100,14 +103,14 @@ document.querySelectorAll('section').forEach((section) => {
     textInput.addEventListener('input', (event) => {
         updateUrl(event.target, params);
         checkLinks(event.target, linkInput);
-        bgFields.forEach((field) => {
+        bgFields[sectionString].forEach((field) => {
             checkBgs(field, event.target.value, linkInput.value);
         });
     });
     linkInput.addEventListener('input', (event) => {
         updateUrl(event.target, params);
         checkLinks(textInput, event.target);
-        bgFields.array.forEach(element => {
+        bgFields[sectionString].forEach(element => {
             checkBgs(element, textInput.value, event.target.value);
         });
     });
@@ -115,7 +118,7 @@ document.querySelectorAll('section').forEach((section) => {
     const textColor = hexFormat(textInput.value);
     const linkColor = hexFormat(linkInput.value);
     section.querySelectorAll(`input[name^="${sectionString}-color"]`).forEach((field) => {
-        bgFields.push(field);
+        bgFields[sectionString].push(field);
         checkBgs(field, textColor, linkColor);
         field.addEventListener('input', (event) => {
             updateUrl(event.target, params);
