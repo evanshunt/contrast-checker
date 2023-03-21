@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrast Checker</title>
+    <style>
+        main {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        fieldset .results {
+            padding: 0.5rem;
+        }
+
+        fieldset .results span {
+            margin-left: 1rem;
+            font-size: 1.5;
+            font-weight: bold;
+        }
+
+        @media all and (min-width: 700px) {
+            fieldset {
+                display: grid;
+                grid-template-columns: 9fr 9fr;
+            }
+
+            fieldset legend {
+                grid-column: 1 / 3;
+            }
+
+            fieldset .info {
+                grid-column: 1 / 2;
+            }
+
+            fieldset .results {
+                grid-column: 2 / 3;
+            }
+        }
+
+        @media all and (min-width: 1400px) {
+            main section {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="light-bg">
+            <h2>Light Backgrounds</h2>
+            <fieldset class="text">
+                <legend>Text</legend>
+                <div class="info">
+                    <label for="light-bg-text-color">Text Color</label>
+                    <input type="text" id="light-bg-text-color" name="light-bg-text-color" value="#000000">
+                    <label for="light-bg-link-color">Link Color</label>
+                    <input type="text" id="light-bg-link-color" name="light-bg-link-color" value="#3333ff">
+                </div>
+                <div class="results">
+                    <p></p>
+                    <dl></dl>
+                </div>
+            </fieldset>
+            <fieldset class="background-type">
+                <legend>Background</legend>
+                <div class="info">
+                    <label for="light-bg-color-1">Background Color #1</label>
+                    <input type="text" id="light-bg-color-1" name="light-bg-color-1" value="#FFFFFF">
+                </div>
+                <div class="results">
+                    <p></p>
+                    <dl class="results"></dl>
+                </div>
+                <div class="info">
+                    <label for="light-bg-color-2">Background Color #2</label>
+                    <input type="text" id="light-bg-color-2" name="light-bg-color-2" value="#FFFFFF">
+                </div>
+                <div class="results">
+                    <p></p>
+                    <dl class="results"></dl>
+                </div>
+                <div class="info">
+                    <label for="light-bg-color-3">Background Color #3</label>
+                    <input type="text" id="light-bg-color-3" name="light-bg-color-3" value="#FFFFFF">
+                </div>
+                <div class="results">
+                    <p></p>
+                    <dl class="results"></dl>
+                </div>
+                <div class="info">
+                    <label for="light-bg-color-4">Background Color #4</label>
+                    <input type="text" id="light-bg-color-4" name="light-bg-color-4" value="#FFFFFF">
+                </div>
+                <div class="results">
+                    <p></p>
+                    <dl class="results"></dl>
+                </div>
+                <div class="info">
+                    <label for="light-bg-color-5">Background Color #5</label>
+                    <input type="text" id="light-bg-color-5" name="light-bg-color-5" value="#FFFFFF">
+                </div>
+                <div class="results">
+                    <p></p>
+                    <dl class="results"></dl>
+                </div>
+            </fieldset>
+        </section>
+        <section class="dark-bg">
+            <h2>Dark Backgrounds</h2>
+            <fieldset class="text">
+                <legend>Text</legend>
+                <div class="info">
+                    <label for="dark-bg-text-color">Text Color</label>
+                    <input type="text" id="dark-bg-text-color" name="dark-bg-text-color" value="#ffffff">
+                    <label for="dark-bg-link-color">Link Color</label>
+                    <input type="text" id="dark-bg-link-color" name="dark-bg-link-color" value="#3333ff">
+                </div>
+                <div class="results" style="background-color: #000000;">
+                    <p></p>
+                    <dl></dl>
+                </div>
+            </fieldset>
+            <fieldset class="background-type">
+                <legend>Background</legend>
+                <div class="info">
+                    <label for="dark-bg-color-1">Background Color #1</label>
+                    <input type="text" id="dark-bg-color-1" name="dark-bg-color-1" value="#000000">
+                </div>
+                <div class="results">
+                    <p></p>
+                    <dl class="results"></dl>
+                </div>
+                <div class="info">
+                    <label for="dark-bg-color-2">Background Color #2</label>
+                    <input type="text" id="dark-bg-color-2" name="dark-bg-color-2" value="#000000">
+                </div>
+                <div class="results">
+                    <p></p>
+                    <dl class="results"></dl>
+                </div>
+                <div class="info">
+                    <label for="dark-bg-color-3">Background Color #3</label>
+                    <input type="text" id="dark-bg-color-3" name="dark-bg-color-3" value="#000000">
+                </div>
+                <div class="results">
+                    <p></p>
+                    <dl class="results"></dl>
+                </div>
+                <div class="info">
+                    <label for="dark-bg-color-4">Background Color #4</label>
+                    <input type="text" id="dark-bg-color-4" name="dark-bg-color-4" value="#000000">
+                </div>
+                <div class="results">
+                    <p></p>
+                    <dl class="results"></dl>
+                </div>
+                <div class="info">
+                    <label for="dark-bg-color-5">Background Color #5</label>
+                    <input type="text" id="dark-bg-color-5" name="dark-bg-color-5" value="#000000">
+                </div>
+                <div class="results">
+                    <p></p>
+                    <dl class="results"></dl>
+                </div>
+            </fieldset>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

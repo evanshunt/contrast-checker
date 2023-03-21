@@ -1,0 +1,8 @@
+version: "3"
+services:
+  web:
+    image: httpd:2.4
+    volumes:
+      - ./docs:/usr/local/apache2/htdocs/:cached
+    ports:
+      - "80:80"
